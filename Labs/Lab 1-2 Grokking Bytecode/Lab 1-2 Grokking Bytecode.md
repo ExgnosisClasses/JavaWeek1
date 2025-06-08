@@ -188,7 +188,7 @@ In real life, it is highly unlikely that you will ever be decompiling Java, but 
 
  Nowadays, most Java apps are distributed in Jar (Java Archive) files. These are zip files with additional information about the contents of the file that the JVM needs to execute the contents.
 
- Configuration information about the application, like which class has the `main()` method are in a special manifest file. There is a manifest file for you to use called `manifest.txt` located in the lab assets folder for this lab in the lab repository.
+ Configuration information about the application, like which class has the `main()` method are in a special manifest file. There is a manifest file for you to use called `manifest.txt` located in the same folder as this lab document.
 
  The contents of the manifest.txt look like this
 
