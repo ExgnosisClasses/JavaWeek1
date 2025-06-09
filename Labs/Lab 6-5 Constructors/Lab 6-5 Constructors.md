@@ -8,7 +8,7 @@ In this lab, we add two constructors to our `Student` class
 <br/>
 <br/>
 
-## Part One: Set Up
+## Part 1: Set Up
 
 Either start with your code from the last lab. The class as it was at the end of the last lab is in the folder Lab5-3 Solution.
 
@@ -49,11 +49,13 @@ private String name = "Marcus";
 }
 ```
 
-## Part Two: Add the constructor with a name parameter
+## Part 2: Add the constructor with a name parameter
 
 The constructor does not return a type and has the same name as the class. Generally, the constructors we want clients to use are the same visibility of the class.  Since `Student` is `public`, we will make the constructor `public` as well. 
 
 Set the `Student.name` instance variable to `null`.
+
+Add the constructor as shown
 
 
 ```java
@@ -63,7 +65,7 @@ public class Student {
 	     
 private String name = null;
 	
-	public Student(String name) {
+	public Student(String name) { // <-------- Add this
 		this.name = name;
 	}
 	public String getName() {
