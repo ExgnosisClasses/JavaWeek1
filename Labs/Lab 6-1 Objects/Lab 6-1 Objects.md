@@ -113,5 +113,28 @@ Once the `main()` method exits, then `pythagoras` also goes out of scope, the re
 
 ---
 
+## Null Pointer Exception
+
+Create as String variable and set it to null
+
+```java
+public class Runner {
+    public static void main(String[] args) {
+        String text = null;  // text is not pointing to any object
+
+        // Try to call a method on a null reference
+        System.out.println("Length: " + text.length());  // 💥 This will throw NullPointerException
+    }
+}
+```
+
+Java does not flag this as an error because it doesn't know at compile time if you are going to assign a value to `text` later in the code.
+- It only realized that `text` is `null` when it tries to access it producing.
+
+```console
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "String.length()" because "text" is null
+	at Runner.main(Runner.java:10)
+```
+
 ##  End Lab
 
