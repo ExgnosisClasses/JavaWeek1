@@ -1,8 +1,6 @@
-# Lab 3-3: Variable Types
+# Lab 2-2: Variable Types
 
-#### Introduction to Java
 
----
 ## Lab Objectives
 
 Compares the use of different storage classes for Java variables, and their scope
@@ -11,13 +9,15 @@ Compares the use of different storage classes for Java variables, and their scop
 <br/>
 <br/>
 
-## Part One: Automatic Extent
+## Part 1: Automatic Extent
 
 Create a java project with a single class, in the demos this was called `Runner`, with a `main()` method. All of your work will be done in the main method.
 
 Create a new lexical scope by adding a couple of {}.  The following code defines two integer variables. The first, `i1` has the lexical scope of the body of the `main()` method since those are the {} that enclose it directly
 
 The second variable, `i2` has the lexical scope you defined since those are the {} that enclose it directly. Notice that `i1` is still defined since your {} scope is nested in the scope of `i1`
+
+Your code should look like this
 
 ```java 
 	public static void main(String[] args) {
@@ -41,7 +41,7 @@ As soon as the flow of control passes through the closing } for the defined scop
 <br/>
 <br/>
 
-## Part Two: Static Extent and Scope
+## Part 2: Static Extent and Scope
 
 Create a class called `Runner` with a `main()` method as in past labs.
 - Remember that it has to be declared in a file with the name `Runner.java`
@@ -65,8 +65,8 @@ class Params {
 
 Reference this variable in the main method of the `Runner` class. Notice that it is in lexical scope of the `main()` method only if the `Params` class can be seen.
 - In this case, both classes are in the same package (more about packages later)
-- `Params.cpus` exists because it has static extent which means that it exists as soon and the JVM starts
-- The `static` block in the `Params` class initializes the variable when it is loaded
+- `Params.cpus` exists because it has a static extent which means that it is created and initialized as soon and the JVM starts
+- The `static` block in the `Params` class initializes the variable when it is created.
 
 Later we will see an example using packages where the `main()` method can't see the static variable.
 
@@ -102,13 +102,13 @@ class Params {
 }
 ```
 
-The advantage to a static block is that we can compute the initial value of variable, which we can't do with a straight assignment. 
+The advantage to a static block is that we can compute the initial value of a static variable, which we can't do with a straight assignment. 
 - The JVM looks for `static` blocks and executes them while loading the class.
 - We are limited in types of operations we cn perform in a `static` block
 
-Make the replacement and run the code.
+Make the replacement in your code and run the code.
 
-Now try with these this variations
+Now try with these this variation.
 
 ```java
 class Params {
@@ -131,16 +131,18 @@ class Params {
 }
 ```
 
-Note that you cannot use default values for automatic variables; they MUST be initialized explicitly before using them  
+Note that you cannot use default values for automatic variables; they MUST be initialized explicitly before using them
+
+It will be left as an exercise for you to try to confirm that automatic variables must be initialized.
 
 ---
 <br/>
 <br/>
 
-## Part Three: Final variables
+## Part 3: Final variables
 
-Use the following variation of the previous section.
-- The code in the `main()` method is changing the value of the variable `Params.cpus` before printing it
+Now change your code as described below to print out the value of the static variable.
+
 
 ```java
 public class Runner {
@@ -176,7 +178,10 @@ class Params {
 
 This will produce a compiler error telling you that you can't change the value of a final variable.
 
-A common use of final static variables is to declare constants that we want to be immutable, in this case we often use all caps for the variable name so it can be recognized as a constant 
+A common use of final static variables is to declare constants that we want to be immutable,
+in this case we often use all caps for the variable name with words separated by underscores
+so it can be recognized as a constant 
+- When use write a variable name in the form `THIS_IS_A_CONSTANT`, is is referred to as "screaming snake case"
 
 
 ```java

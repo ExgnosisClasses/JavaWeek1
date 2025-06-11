@@ -26,7 +26,7 @@ public class Runner {
 class Student {}
 ```
 
-Int the `main()` method, create two student objects and print them out. Java has no idea how to print out a `Student` object so it just prints out the address of the object on the heap instead.
+In the `main()` method, create two student objects and print them out. Java has no idea how to print out a `Student` object so it just prints out the address of the object on the heap instead.
 
 ```java
 public static void main(String[] args) {
@@ -43,15 +43,15 @@ Which should produce output that looks similar to this:
 Plato is at Student@4517d9a3
 Euclid is at Student@372f7a8d
 ```
-The output consists of the type of the object on the heap plus the memory location of the object on the heap.
+The output consists of the type of the object plus the memory location of the object on the heap.
 
 Notice that the variables `plato` and `euclid` are automatic variables on the stack that contain the addresses of the corresponding objects on the heap.
 
-The objects on the heap will exist until they can no longer be referenced
+The objects on the heap will exist until they can no longer be referenced.
 
 ### _Step 2 - Going out of scope_
 
-Continuing from the code you have from part one, but you can delete the code relating to the variable `euclid`.
+Continuing from the code you have from part 1, you can delete the code relating to the variable `euclid`.
 
 Add a new variable scope with a set of braces {} as shown.
 
@@ -77,10 +77,11 @@ Define a `Student` variable `pythagoras` at the start of the main method initial
 			Student plato = new Student();
 			pythagoras = plato;
 			System.out.println("Address of plato = " +  plato);
-			System.out.println("Address of pythagoras = " +  pythagoras
+			System.out.println("Address of pythagoras = " +  pythagoras);
 		}
 	}
  ```
+
 Which should look something like this:
 
 ```console
@@ -90,7 +91,8 @@ Address of pythagoras = Student@4517d9a3
 
 The object `Student@4517d9a3` now has a reference count of 2 since there are two variables that know the memory address.
 
-However, outside the scope block, the variable `plato` is destroyed and can no longer be used.  However `pythagorus` still has the location so Java decrements the reference count of `Student@4517d9a3` to 1.
+Outside the scope block, the variable `plato` is destroyed and can no longer be used.  
+- However `pythagorus` still has the location so Java decrements the reference count of `Student@4517d9a3` to 1.
 
 ```java
 public static void main(String[] args) {
@@ -109,13 +111,16 @@ public static void main(String[] args) {
 	}
 ```
 
-Once the `main()` method exits, then `pythagoras` also goes out of scope, the reference count og `Student@4517d9a3` goes to zero and Java marks the obect as deleted. The actual memory is reclaimed the next time the garbage collector runs.
+Once the `main()` method exits, then `pythagoras` also goes out of scope, the reference count of `Student@4517d9a3` goes to zero and Java marks the object as no longer in use. The actual memory is reclaimed the next time the garbage collector runs.
 
 ---
 
 ## Null Pointer Exception
 
-Create as String variable and set it to null
+Create as String variable and set it to null.
+- Call the `length()` method on your variable
+- This method returns the length of a string
+- But this method is not defined for `null`, which results in a null pointer exceptions
 
 ```java
 public class Runner {

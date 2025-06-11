@@ -10,9 +10,9 @@ This lab explores some of the Java operators. For this lab, all you need to do i
 <br/>
 <br/>
 
-## Part One: Basic Operations
+## Part 1: Basic Operations
 
-Create a Java Class to perform basic arithmetic. The code is in the Solutions folder, 
+Create a Java Class to perform basic arithmetic. The code is in the Solutions folder.
 
 ```java 
 public class Runner {
@@ -34,7 +34,7 @@ public class Runner {
 
 ```
 
-Experiment with different data types for `a` and `b` to see how mixed mdde arithmetic
+Experiment with different data types for `a` and `b` to see how mixed mode arithmetic
 - Try with `a` as a float and `b` as an int
 - Try with `a` as an int and `b` as a float
 - Try with both as a float shown below
@@ -55,7 +55,7 @@ Modulus: 1.0
 Updated a (a += 5): 15.0
 ```
 
-## Part Two: Logical Operators
+## Part 2: Logical Operators
 
 Replace the previous code with the code from the `RelationalLogicLab` in the Solutions folder as shown
 
@@ -78,7 +78,7 @@ public class Runner {
 ```
  Experiment with different values and numeric types
 
-## Part Three: Floating Point Operations
+## Part 3: Floating Point Operations
 
 Experiment with division by zero with integers. No mater what the numerator is, if the denominator is `0` we get a divide by zero error because it is integer division
 
@@ -138,7 +138,7 @@ r == s is false
 <br/>
 <br/>
 
-## Part 4 Mixed Mode Arithmetic
+## Part 4: Mixed Mode Arithmetic
 
 Explain the following result:
 
@@ -155,13 +155,13 @@ NaN
 Infinity
 ```
 
-How would you fix the error in this code? Hint, there are two different solutions.
+How would you fix the error in this code? Hint: there are multiple solutions.
 
 ```java
 	public static void main(String[] args) {
 		int i = 1;
-		int j = 3;
-		int k = i + (long)j;
+		long j = 3L;
+		int k = i + j;
 	}
 
 ```
@@ -169,7 +169,7 @@ How would you fix the error in this code? Hint, there are two different solution
 
 ## Part 4: Increment operator
 
-Now use th ecode from the `UnaryLab` from the Solutions folder
+Now use the ecode from the `UnaryLab` from the Solutions folder
 
 ```java
 public class Runner {
@@ -216,4 +216,5 @@ a + b = 6.8
 a + (int)b = 6
 (int)(a + b) = 6
 ```
+
 ## End Lab

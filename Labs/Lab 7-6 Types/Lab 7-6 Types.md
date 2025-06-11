@@ -3,7 +3,7 @@
 
 ## Lab Objectives
 
-This lab introduced the Java Interface construct
+This lab introduces the Java Interface construct
 
 ---
 <br/>
@@ -69,20 +69,23 @@ class Bird extends Pet {
 
 ## Part 2: The Inheritance problem
 
-It turns out that not every sort of grouping we do at an abstract level fits nicely into an inheritance hierarchy. The common aspect that we captured in the abstract `Pet` class is that they all have a `speak()` method.
-
-But what if we wanted to generalize all the pets that could walk? We could create a class like this:
+It turns out that not every sort of grouping we do at an abstract level fits nicely into an inheritance hierarchy. 
+- The common aspect that we captured in the abstract `Pet` class is that they all have a `speak()` method.
+- But what if we wanted to generalize all the pets that could walk? We could create a class like this:
 
 ```java
  abstract class Walker {
 	 abstract void walk();
  }
 ```
+
 The problem is that both `Dog` and `Cat` would have to extend both the `Pet` class and the `Walker` class. 
 
-The more modern approach is to define a type in terms of the interface it presents for the role that it plays. A Java interface is just a list of methods that have to implement (the contract) for an object to be of that type.
+The more modern approach is to define a type in terms of the interface it presents for the role that it plays. 
+- A Java interface is just a list of methods that have to implement (the contract) for an object to be of that type.
+- We will be seeing Interfaces a lot more in the next few weeks.
 
-Remove the abstract class Pet and create new types in terms of thse three interfaces.
+Remove the abstract class `Pet` and create new types in terms of these three interfaces.
 
 ```java
 interface Pet {
@@ -95,7 +98,7 @@ interface Flyer {
     public void fly();
 }
 ```
-Replace the extends in the code with each class implementing the interfaces that are appropriate as shown
+Replace the `extends` in the code with each class implementing the interfaces that are appropriate as shown
 
 ```java
 class Dog implements Pet, Walker {
@@ -141,7 +144,9 @@ class Bird implements Pet, Flyer {
 	}
 }
 ```
-However, we can use interfaces as types in exactly the same what that we use abstract classes or regular classes.  In fact, the mainline code from the previous lab works without modification.
+
+We can use interfaces as types in exactly the same what that we use abstract classes or regular classes.  
+- In fact, the mainline code from the previous lab works without modification.
 
 ```java
 	public static void main(String[] args) {

@@ -1,12 +1,13 @@
 # Lab 3-2: Flow Control
 
-L
+
 ---
+
 ## Lab Objectives
 
 This lab explores the basic flow control statements
 
-Solutions are provided in the 'lab 3-2 Solutions' folder.
+Solutions are provided in the 'Lab 3-2 Solutions' folder.
 
 ---
 <br/>
@@ -14,7 +15,7 @@ Solutions are provided in the 'lab 3-2 Solutions' folder.
 
 ## Part 1: Problem Statement
 
-Write a for loop that sums up the square of the even numbers between 1 and 20 inclusive. 
+Write a `for` loop that sums up the square of the even numbers between 1 and 20 inclusive. 
 
 Then add a condition that halts the loop as soon as the sum is greater than 30.
 
@@ -62,7 +63,9 @@ public class Runner {
 }
 ```
 
-Each time through the loop, you have to check to see if the number is even. The following test will do that by seeing if there is a non-zero remainder on division by 2 and then skip that iteration if there is a non-zero remainder
+Each time through the loop, you have to check to see if the number is even. 
+- The following test will do that by seeing if there is a non-zero remainder on division by 2 and then skip that iteration if there is a non-zero remainder
+- Add it to the appropriate place in your code.
 
 
 ```java
@@ -85,8 +88,9 @@ public class Runner {
 }
 ```
 
-Ihe number is even, add the square to the sum by adding the square instead of the number. 
+If the number is even, add the square to the sum by adding the square instead of the number. 
 - This code uses the more compact form `sum += (i * i);`
+- Add it to your code
 
 ```java
 public class Runner {

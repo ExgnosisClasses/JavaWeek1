@@ -1,6 +1,10 @@
 # Lab 1-1: Hello World
 
-#### Introduction to Java
+#### About this Lab
+
+This lab assumes that students are using LearQuest VMs with Eclipse as the IDE.
+
+If you are not using Eclipse, your instructor will guide you through the process of setting up whatever IDE you will be using in class.
 
 ---
 ## Lab Objectives
@@ -12,7 +16,7 @@ If you are new to programming, this lab will help you get familiar with writing 
 
 ---
 
-## Part One: The Application
+## Part 1: The Application
 
 The following is the standard "Hello World" application required by law to be the first exercise done in any introductory programming class.
 
@@ -34,7 +38,9 @@ But remember the discussion about how code is packaged in an OO language; every 
 
 The class `HelloWord` can be thought of as a container where you can put the one line of executable code to ensure that it actually gets executed.
 
-Python, on the other hand, allows you to declare and use code without having to put it in any sort of container. Neither is right or wrong, Java and Python just represent two different philosophies and language design choices about how to write code.
+Python, on the other hand, allows you to declare and use code without having to put it in any sort of container.
+Neither is right nor wrong;
+Java and Python just represent two different philosophies and language design choices about how to write code.
 
 In you are new to Java, don't worry about what all the code actually does; that will become clearer as we go through the course.
 <br/>
@@ -42,7 +48,7 @@ In you are new to Java, don't worry about what all the code actually does; that 
 ---
 <br/>
 
-## Part Two: Using Eclipse
+## Part 2: Using Eclipse
 
 ### _Step 1 - Start Eclipse_
 

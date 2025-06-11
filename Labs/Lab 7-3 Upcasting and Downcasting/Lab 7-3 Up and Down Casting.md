@@ -5,11 +5,12 @@
 ## Lab Objectives
 
 This lab explores upcasting and downcasting in inheritance hierarchies
+
 ---
 <br/>
 <br/>
 
-## Part One: Continue from last lab.
+## Part 1: Continue from last lab.
 
 The final version of the code at the end of the last lab was:
 
@@ -85,9 +86,12 @@ This is type safety because an arbitrary `Dog` is not a `ServiceDog`.
 	//workDog = fido;  // error because an arbitrary dog is not a service dog
 ```
 
-Assign a `ServiceDog` object to a `Dog` variable.  Why can we do this? Because the inheritance relationship says that all service dogs are also dogs, because service dogs are just a special type of dog. 
+Assign a `ServiceDog` object to a `Dog` variable.  
+- Why can we do this? 
+- Because the inheritance relationship says that all service dogs are also dogs; service dogs are just a special type of dog. 
 
-To assign an object to a variable that is the type of one of its superclasses is called _upcasting_ because we are considering the object as a type higher in the inheritance hierarchy.
+To assign an object to a variable that is the type of one of its superclasses is called _upcasting_ 
+- It's called this because we are treating the object as a type higher in its inheritance hierarchy.
 
 Try to assign `someDog` back to `workDog`, Java won't let you because of type safety
 
@@ -96,7 +100,11 @@ Try to assign `someDog` back to `workDog`, Java won't let you because of type sa
 	//workDog = someDog; // error like before
 ```
 
-Why block this? Because we know that `someDog` contains a `ServiceDog` object because we put it there earlier, but Java can't figure that out just by looking that the statement. It might be that the object in `someDog` isn't really a `ServiceDog` at some point in the future while the code is running.
+Why block this? 
+- Because we know that `someDog` contains a `ServiceDog` object because we put it there earlier
+- But Java can't figure that out just by looking at the statement. 
+- It might be that the object in `someDog` isn't really a `ServiceDog` at some point in the future while the code is running.
+- It depends on what happened during execution before the flow of control gets to this statement.
 
 Do the same sort of thing we did with primitive data types and _downcast_ the `Dog` to a `ServiceDog`
 
@@ -105,7 +113,9 @@ Do the same sort of thing we did with primitive data types and _downcast_ the `D
 	workDog = (ServiceDog)someDog; // Downcasting
 ```
 
-Just like casting with primitive types, this has the potential to go very wrong.  Suppose we have a cast a plain old `Dog` as a `ServiceDog`, then Java will allow us to call the `work()` method on it, which it doesn't have.
+Just like casting with primitive types, this has the potential to go very wrong.  
+- Suppose we have a cast a plain old `Dog` as a `ServiceDog`, then Java will allow us to call the `work()` method on it, which it doesn't have.
+- And that will throw an exception.
 
 ```java
 	workDog = (ServiceDog)fido;  // Fido is not a ServiceDog
@@ -125,7 +135,7 @@ class Dog cannot be cast to class ServiceDog
 ## Part 3: Generic Arrays
 
 This allows us to create collections of dogs whether they are service dogs or just plain old dogs.
-~~~~
+
 We can tell which type of dog a generic dog entry is by using the `instanceof` binary operator. If we do have a `ServiceDog` then we can downcast safely and call the `work()` method
 
 ```java

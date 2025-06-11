@@ -1,6 +1,6 @@
 # Lab 6-4: Static Data and Methods
 
-L
+
 ## Lab Objectives
 
 In this lab, we add some static methods and data to our student class
@@ -8,19 +8,24 @@ In this lab, we add some static methods and data to our student class
 <br/>
 <br/>
 
-## Part One: Set Up
+## Part 1: Set Up
 
 Either start with your code from the last lab or use the starter code solutions folder in the previous lab.
 
-## Part Two: Student Count
+## Part 2: Student Count
 
-If we have a requirement to count the number of students created. This is a property of the whole class, not an individual student.
+Suppose we have a requirement to count the number of students created. 
+- This is a property of the whole class, not an individual student, so it should exist with a value of zero if no actual Student objects exist.
 
-We can create a `count` variable to hold the count. Since this is not an instance variable, the syntax for referring to it is `Student.count`. Static variables are prefixed by the name of the class they are defined in.
+We can create a `count` static variable to hold the count. 
+- Since this is not an instance variable, the syntax for referring to it is `Student.count`. 
+- - Static variable references are prefixed by the name of the class they are defined in.
 
 Also create a constant called `MAX_COUNT` that will set the maximum number of students that can be created.
 
 Start by adding the constant and the static variable, initializing it in a static block.
+
+Your code should look like this
 
 ```java
 package remote;
@@ -46,7 +51,9 @@ Then we can use it in the `main()` method.
 		System.out.println("Student.count = " + Student.count);
 	}
 ```
-But this is not a good solution since anyone can manipulate the data.  The solution is to make the data private and add a getter. Instead of a setter, we implement an "incrementor" that bumps up the count by instead of resetting it.
+But this is not a good solution since anyone can manipulate the data.  
+- The solution is to make the static data private and add a getter. 
+- Instead of a setter, we implement an "incrementor" that bumps up the count by instead of resetting it.
 
 ```java
 	public class Student {
@@ -62,7 +69,8 @@ But this is not a good solution since anyone can manipulate the data.  The solut
 	    private String name = "Marcus";
 	
 ```
-The only problem this solution is that we are making the client `Runner` class responsible for 
+The only problem this solution is
+that we are making the client `Runner` class responsible for calling the increment function
 
 ```java
 	public static void main(String[] args) {

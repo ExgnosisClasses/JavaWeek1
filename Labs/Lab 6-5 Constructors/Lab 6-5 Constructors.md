@@ -76,8 +76,8 @@ private String name = null;
 ```
 As soon as you add this constructor, the code in the `Runner` class has an error since the constructor `Student()` no longer exists.
 - The rule in Java is that if you don't provide any constructors, then Java will add an empty default constructor behind the scenes that looks like `Student(){}`
-- As soon as you add _any_ constructor, Java no longer provides this behind the scenes default constructor
-- The reason for this is that many small classes don't need an explict constructor and making it necessary to code this over and over again is unnecessary 
+- As soon as you add _any_ constructor, Java no longer provides this behind the scene default constructor
+- The reason for this is that many small classes don't need an explict constructor and making it necessary to code this over and over again is pointless. 
 - However, Java needs a constructor to build objects correctly, so this is the compromise made in the language.
 
 Use our new constructor, instead which produced the right result.
@@ -93,9 +93,9 @@ public class Runner {
 ```
 
 	
-the validator which we used in the `setName()` method, and we should use it here to be consistent.
+The validator which we used in the `setName()` method should be used here to be consistent.
 
-There are two ways we can do this, we can call it from the constructor directly, or we can call like this
+There are two ways we can do this, we can call it from the constructor directly, or we can call it via the `setter`
 
 ```java
 	private String name = null;
@@ -109,7 +109,8 @@ There are two ways we can do this, we can call it from the constructor directly,
 
 <br/>
 <br/>
-It may be a domain rule that all students have names. It is possible to wind up with a student object that violates that rule like this.
+It may be a domain rule that all students have names. 
+- This introduces what we call a domain constraint, a rule about what a valid student object should like.
 
 ```java
 	public static void main(String[] args) {
@@ -117,15 +118,16 @@ It may be a domain rule that all students have names. It is possible to wind up 
 		igor.printme();
 	}
 ```
-Which gives us an _invalid_ object - one we created, but it's not quite right from the domain perspective.
+Which gives us an _invalid_ object. 
+- We can created it, but it's not quite right from the domain perspective.
 
-There will be two ways we approach this problem
+There will be two ways we can approach this problem
 
 1. In the exceptions section, we can throw an exception from the constructor that will roll back the creation of the object, including releasing all the memory allocated to it. We will see this in the exceptions section later in the course.
 
 2. It might be that we can create a student object with a placeholder name "TBD" if we don't know the name at the time of creation and will be set later.
 
-The problem with the second approach is that we need to know if the object is valid. So we can add a `boolean` valid `isValid` to tell us. 
+We can use the validator for both of these.
 
 So now let's implement the constructor with no arguments and a default name value.
 
@@ -174,7 +176,7 @@ Thinking ahead we may have a number of validity checks if we add more data like 
 
 We will often put a list of these rules, which we technically call specifications into a special method that runs all the checks after all the data has been input.
 
-We will do this in a later lab for a Bank Account class, but for now, we will just use the one validator because we only have one data item. 
+But for now, we will just use the one validator because we only have one data item. 
 
 The place to do this is in the `setName()` method
 
@@ -230,7 +232,7 @@ Start by making the increment function private and call it from the constructor.
 
 To do this, we are going to use a trick where one constructor calls the other, so we don't repeat code.
 
-First, refactor the static method
+First, refactor the static method to make it private.
 
 ```java
  private static void incrementCount() {
@@ -238,7 +240,8 @@ First, refactor the static method
 	}
 ```
 
-Now add this call into the constructor with one parameter. Because the constructor is a member of the Student class, it can call any private method even if the method is static. Remember, being public or private is about visibility
+Now add this call to the constructor with one parameter.
+- Because the constructor is a member of the Student class, it can call any private method even if the method is static. Remember, being public or private is about visibility
 
 ```java
 	public Student(String name) {
@@ -256,7 +259,8 @@ public void printme() {
 ```
 Instead, initializing `Student.name` to "TBD" the constructor with no arguments will call the constructor with one argument passing null as the name. We really didn't need "TBD" as it turns out.
 
-However, the syntax for one constructor calling another is weird, instead of the constructor name we use `this` as shown here
+However, the syntax for one constructor calling another is weird, instead of the constructor name we use `this` as shown here. 
+- Java can figure out which constructor by checking the signature (the number of parameters and their types) in the call to `this(...)`
 
 ```java
 

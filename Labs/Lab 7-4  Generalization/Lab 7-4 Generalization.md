@@ -59,7 +59,8 @@ class Bird {
 
 Create a generalization category called `Pet` to be the superclass of all these concrete types.
 
-The `Pet` class has no attributes or methods, it is just creating a general category.  Now we can make all the animal types `Pets` by just using `extends`
+The `Pet` class has no attributes or methods, it just creates a general category.  
+- Now we can make all the animal types `Pets` by just using `extends`
 
 ```java
 class Pet {}
@@ -100,6 +101,7 @@ class Bird extends Pet{
    }
 }
 ```
+
 Since we never want to actually create an object of type `Pet`, declare the class to be `abstract`
 
 ```java
@@ -131,11 +133,11 @@ However, there is still a problem. We cannot call the `speak()` method any `Pet`
 <br/>
 <br/>
 
-## Part Three : Generalizing Methods
+## Part 3: Generalizing Methods
 
 Since all the concrete classes have a `speak()` method, put a generic `speak()` method in the `Pet` class and let each concrete class override it.
 
-Notice the use of the `@Override` annotation to tell both Java and anyone reading the code that the `speak()` methods in the concrete classes overrides the superclass definition.
+Notice the use of the `@Override` annotation to tell both Java and anyone reading the code that the `speak()` methods in the concrete classes override the superclass definition.
 
 ```java
 abstract class Pet {
@@ -188,6 +190,8 @@ class Bird extends Pet {
 ```
 
 Call the `speak()` method on any type of `Pet`
+- Notice that Java will call the right `speak()` method for the actual object type, not the variable type.
+- The technical term for this is 'run time binding' where JAva waits until the method is about to be called before figuring out which version of the method to use.
 
 ```java
 	public static void main(String[] args) {
@@ -226,6 +230,7 @@ abstract class Pet {
 }
 ```
 No other changes have to be made, and the code works exactly the same as before.
+
 
 However, if we try to create a new subclass that doesn't implement `speak() ` then we will bet an error
 

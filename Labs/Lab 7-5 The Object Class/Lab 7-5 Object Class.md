@@ -12,9 +12,9 @@ This lab introduces Object Class
 
 ## Part 1: The Object Class
 
-All classes in Java are subclasses of the Object class.  For example, the following is a definition for a person class where we explicitly state that `Object` is the superclass
+All classes in Java are subclasses of the `Object` class.  For example, the following is a definition for a person class where we explicitly state that `Object` is the superclass
 
-You can, but don't have to explicitly extend the Object class; it is always done
+You can, but don't have to, explicitly extend the Object class; it is always done invisibly and automatically
 
 ```java 
 class person {  // the extends object is implied
@@ -36,9 +36,11 @@ class person {  // the extends object is implied
 
  }
 ```
-The Object class provides a set of methods we can override. Because of inheritance, we can be sure that all of these methods are defined.  We can see this by invoking a couple of the `Object` methods and see their default implementation. In particular, notice that the `toString()` method prints out the address of the object.
+The Object class provides a set of methods we can override. Because of inheritance, we can be sure that all of these methods are defined.  
+- We can see this by invoking a couple of the `Object` methods and see their default implementation. 
+- In particular, notice that the `toString()` method prints out the address of the object.
 
-Test this with the followng code
+Test this with the following code
 
 ```java
 	public static void main(String[] args) {
@@ -59,8 +61,8 @@ Hashcode = 2124308362
 obj.Person@7e9e5f8a
 ```
 
-Override the default implementations like this.
-- We typically don't use the @Override annotation when override Object methods
+Override the default implementations as shown below.
+- We typically don't use the `@Override` annotation when override `Object` methods
 
 ```java
 	public String toString() {
@@ -84,9 +86,12 @@ My name is Raj and I am 42 years old
 
 ## Part 2: Overriding methods
 
-Previously, we mentioned the issues of whether two Java objects represented the same real world object. The `equals()` method allows us to override the default behavior based on comparing addresses. We define what it means for two `Person` objects to be equal.
+Previously, we mentioned the issues of whether two Java objects represented the same real world object. 
+- The `equals()` method allows us to override the default behavior based on comparing addresses. 
+- We define what it means for two `Person` objects to be equal.
+- With real world domain objects, equality is in the eye of the beholder.
 
-In this case we can say that the two objects represent the same person if they have the same `name` and `age`.
+In this lab, we can say that the two `Person` objects represent the same person in the real world if they have the same `name` and `age`.
 
 We can also use `clone()` to make a deep copy.
 

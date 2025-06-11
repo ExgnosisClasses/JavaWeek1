@@ -43,7 +43,7 @@ Test it to see it works.
 
 ## Part 2: Create a subclass without inheritance (optional)
 
-This section shows how to do inheritance without `extends`. Read through it and try the code if you want
+This section shows how to do inheritance without `extends`. Read through it and try the code. Give it a try if you want to challenge yourself.
 
 A `ServiceDog` does everything a dog does with the addition of adding a `work()` method.
 
@@ -72,6 +72,7 @@ class ServiceDog {
 	 }
  }
 ```
+
 Now we can test this class.
 
 ```java
@@ -84,9 +85,10 @@ Now we can test this class.
 <br/>
 <br/>
 
-## Part 3: Using extends
+## Part 3: Using `extends`
 
-What we have done is use some rather standard methods for object construction. In fact, this wrapping an object in another object to add functionality is called the Decorator Design Pattern.
+What we have done is use some rather standard methods for object construction. 
+- In fact, this wrapping an object in another object to add functionality is called the Decorator Design Pattern.
 
 The problem is that this is a solution that requires a LOT of work and boilerplate code.
 

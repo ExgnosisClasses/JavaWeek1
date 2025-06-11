@@ -1,17 +1,14 @@
 # Lab 1-2 : Grokking Bytecode
 
-#### Introduction to Java
-
----
 ## Lab Objectives
 
-This lab works with Java code outside the IDE. Do not use an IDE for this lab, you are going to have to work with your Java code the way your grandparents did.
+This lab works with Java code outside the IDE. Do not use an IDE for this lab, you are going to have to work with your Java code the way your ancestors did.
 
 ---
 <br/>
 <br/>
 
-## Part One: Setup
+## Part 1: Setup
 
 At the command line, create a new directory to use. Do not use Eclipse or any other IDE. For this lab, I have used `D:\lab1-2`, but use whatever directory you want
 
@@ -176,7 +173,7 @@ Constant pool:
 }
 SourceFile: "HelloWorld.java"
 ```
-After this course, you should be able to come back and understand a lot of what is in this output.
+After this course, you should be able to come back and understand some of what is in this output.
 
 In real life, it is highly unlikely that you will ever be decompiling Java, but it is important to see what bytecode is at least once in your career
  
@@ -188,7 +185,7 @@ In real life, it is highly unlikely that you will ever be decompiling Java, but 
 
  Nowadays, most Java apps are distributed in Jar (Java Archive) files. These are zip files with additional information about the contents of the file that the JVM needs to execute the contents.
 
- Configuration information about the application, like which class has the `main()` method are in a special manifest file. There is a manifest file for you to use called `manifest.txt` located in the same folder as this lab document.
+ Configuration information about the application, like which class has the `main()` method are in a special manifest file. There is a manifest file for you to use in this lab called `manifest.txt` located in the same folder as this lab document.
 
  The contents of the manifest.txt look like this
 
@@ -210,7 +207,9 @@ D:\lab1-2>dir
 2023-08-10  07:53 PM                24 manifest.txt
               
 ```
-To create the jar file, use the jar creation tool from the JDK. Check to see that the jar file has been created and run it in a JVM.  The `-jar` switch lets the class loader know that we are trying to run a jar file and not just plain class files
+To create the jar file, use the jar creation tool from the JDK as shown below.
+Check to see that the jar file has been created and run it in a JVM.
+The `-jar` switch lets the class loader know that we are trying to run a jar file and not just plain class files
 
 ```console
 D:\lab1-2>jar cfm Hi.jar manifest.txt HelloWorld.class

@@ -3,18 +3,18 @@
 
 ## Lab Objectives
 
-This lab explores some array basics. For this lab, you can just use a basic `Runner` class with a `main()` method. Do all of your work in the main method.
+This lab explores some array basics. For this lab, you can use a basic `Runner` class with a `main()` method. Do all of your work in the main method.
 
 ---
 <br/>
 <br/>
 
-## Part One: Simple Arrays
+## Part 1: Simple Arrays
 
 Create two different arrays of integers each with a length of five with the same entries {10,11,12,14,15}. In the code below, these are creatively called `first` and `second`
 
 The first array is created using the `new` operator and a loop to initialize the array.
-- Note that we cannot use the compact form of the for loop because we need an explict value for the index, so we use the older form of the for loop
+- Note that we cannot use the compact form of the `for` loop because we need an explict value for the index, so we use the other form of the `for` loop with an explicit loop index counter.
 
 The second array is created using the static initialization syntax.
 
@@ -42,11 +42,13 @@ public class Runner {
     }
 }
 ```
-Now create a third array variable that is initialized to `null`. Assign `first` to `third`.
+Now create a third array variable that is initialized to `null`. Assign the variable`first` to the variable `third`.
 
-Compare the address `first` and `third` to confirm the point to the same memory location.  The `==` comparison operator only compares addresses. If the arrays are at the same address in memory, they are equal. 
+Compare the address `first` and `third` to confirm they both point to the same memory location.  
+- The `==` comparison operator only compares addresses. 
+- If the arrays are at the same address in memory, they are equal. 
 
-Change one element of the `first` array and notice it also changed the corresponding element in `third`
+Change one element of the `first` array and notice it also changed the corresponding element in `third` array
 
 But also note that `first` and `third` are still equal because they still point to the same memory location.
 
@@ -77,11 +79,11 @@ public class Runner {
 }
 ```
 
-## Part Two: Copying Arrays
+## Part 2: Copying Arrays
 
 To deep copy an array, we have to create a new array and then copy each element from the old array to the new one.
 - We also use the `length` property of the array to find out how long to make the new array
-- Delete your previous arrays and create a new `first` arra like this 
+- Delete your previous arrays and create a new `first` array like this 
 
 ```java 
 int [] first = {11,12,13,14,15};
@@ -148,9 +150,11 @@ public class Runner {
 }
 ```
 
-## Part Three Arrays of Objects
+## Part 3: Arrays of Objects
 
-Create a `Coder` class under your `Runner` class. Make sure it is not `public` since you don't want to have to create a new file. A coder has a name which is assigned by the constructor and a `getName()` method.
+Create a `Coder` class under your `Runner` class. Make sure it is not `public` since you don't want to have to create a new file. 
+- A coder has a name which is assigned by the constructor and a `getName()` method.
+- We will cover in detail what you are doing in the OOP module.
 
 ```java
 class Coder {
@@ -166,7 +170,9 @@ class Coder {
 }
 ```
 
-Create an array of `Coder` objects. Print out each object in the array and note that it is an address. We can also apply the `getName()` method to each object using the syntax shown.
+Create an array of `Coder` objects. 
+- Print out each object in the array and note that it is an address. 
+- We can also apply the `getName()` method to each object using the syntax shown.
 
 ```java
 public class Runner {

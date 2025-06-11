@@ -1,17 +1,15 @@
 # Lab 2-1: Data Types
 
-#### Introduction to Java
-
----
 ## Lab Objectives
 
 Exploring some of the data typing rules of Java
 
 ---
+
 <br/>
 <br/>
 
-## Part One: Casting and Type Safety
+## Part 1: Casting and Type Safety
 
 Create a java project with a single class, in the demos this was called `Runner`, with a `main()` method. All of your work will be done in the main method.
 
@@ -35,20 +33,23 @@ Experiment with the following code snippets.
 
 The literal `1L` is interpreted by Java to mean that this value should be represented by 64 bits as opposed to the literal `1` which should be represented by 32 bits.  
 
-In the following code, Java will not allow the first assignment since it breaks type safety, but will allow the second.
+In the following code, Java will not allow the first assignment since it breaks type safety,
+but Java will allow the second.
 
 ```java
     int i = 1L;     // error
     int i = 1;      // works
 ```
-The same is true for floats. The value `1.0` is interpreted as needing 64 bits so cannot be assigned to a float variable. However `1.0F` is interpreted as needing 32 bits and can be assigned to a float variable.
+The same is true for floats.
+The value `1.0` is interpreted as needing 64 bits, a `double`, so it cannot be assigned to a `float` variable.
+However `1.0F` is interpreted as needing 32 bits and can be assigned to a float variable.
 
 ```java
     float f32 = 1.9;   // error 1.9 is a double
     float f32 = 1.9F;  // works  
 ```
 
-We can also assign any integer to a float variable but there will be a loss of precision.
+We can also assign any integer to a float variable, but there will be a loss of precision due to rounding.
 
 ```java
     long i32 = 1282788272777377445L;
@@ -59,9 +60,13 @@ We can also assign any integer to a float variable but there will be a loss of p
 
 **Casting**
 
-In the following code, a float is converted to an int with a loss in precision.
+In the following code, a float is converted to an `int` with a loss in precision.
 
 A long value is converted to an int with an overflow result meaning the value was too big to fit into 32 bits so some data was lost.
+
+Java normally does not allow you to assign a larger variable type to a smaller variable type, called a narrowing conversion, since some data might be lost.
+
+By using the cast operator `(int)`, you override Java's rules and promise Java that the value stored in 64 bits will really, cross your heart, fit into 32 bits safely.
 
 ```java
     long i64 = 193847947443L;
@@ -77,9 +82,9 @@ A long value is converted to an int with an overflow result meaning the value wa
 
 **Floating Point Numbers**
 
-Since floating point numbers are used for scientific calculations, we often find that the get very close to 0 without actually being 0. In other words we often see a series of floating point calculations having a limit of 0.
+Since floating point numbers are used for scientific calculations, we often find that they get very close to 0 without actually being 0. In other words, we often see a series of floating point calculations having a limit of 0.
 
-To reflect this asymptotic behavior, division by zero for floating point numbers (NaN means 'not a number')
+To reflect this asymptotic behavior, division by zero doesn't fail but produces a value which is essentially either "approaching infinity" or (in the case of 0.0/0.0), "not a number NaN".
 
 ```java
    System.out.println(1.0/0.0);   // prints Infinity 

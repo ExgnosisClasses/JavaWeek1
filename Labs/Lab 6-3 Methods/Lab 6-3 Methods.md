@@ -16,7 +16,7 @@ Delete the `Student` class in the `lab6` package to avoid confusion.
 
 The next lab is a continuation of this lab, so save your code!
 
-## Part Two: Getter and Setters
+## Part 2: Getter and Setters
 
 In this first version of `Student`, the `name` instance variable will be private and be accessible only through a getter. In addition, we will add a `printme()` public method that prints out the name of the student.
 
@@ -37,6 +37,8 @@ public class Student {
 
 Note the use of the `this` keyword. You can remove the keyword, and the code will still run, but as Java code gets more complex, using `this` helps disambiguate where the variable comes from.
 
+The `this` keyword essentially means "Use the instance variable in the same object that is running this method."
+
 Now modify the `main()` class as shown and execute.
 
 ```java
@@ -51,13 +53,14 @@ public class Runner {
 	}
 }
 ```
-Now we add a setter. However, the student name cannot be blank, so we have to ensure no on4 resets the name field to either an empty string or a null pointer.
+Now we add a setter. However, the student name should not be blank, so we have to ensure no one resets the name field to either an empty string or a null pointer.
 
-We start by creating a private method with the validation logic. It returns a `boolean` to indicate if the name is allowable or not.
+We start by creating a private method with the validation logic. 
+- It returns a `boolean` to indicate if the name being provided is allowable or not.
 
 Then the setter checks with the validator method to see whether to reset the name property.
 
-We can add the following code to the `Student` class
+Add the following code to the `Student` class
 
 ```java
 	private boolean nameValidator(String s) {
@@ -71,7 +74,8 @@ We can add the following code to the `Student` class
 		this.name = name;
 	}
 ```
-This code uses a bit of common Java style. When we are passing a parameter in a method that will be assigned to an instance variable, the same name is used for both with the instance variable being identified by the `this` prefix.
+This code uses a bit of common Java coding style. 
+- When we are passing a parameter in a method that will be assigned to an instance variable, the same name is used for both with the instance variable being identified by the `this` prefix.
 
 Now update the `Runner` class.
 
